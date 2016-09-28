@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class='col-sm-6 col-sm-offset-3'>
+    <h1>Users list</h1>
+{% for instance in instance %}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="thumbnail">
+      <div class="caption post-detail-item">
+        <h3><a href="/blog/users/{{ instance.id }}/">{{ instance.username }}</a> </h3>
+        <p>First name: {{ instance.first_name }}</p>
+        <p>Last name: {{ instance.last_name }}</p>
+        <p>Email: {{ instance.email }}<p>
+        <p><a href="/blog/users/{{ instance.id }}/" class="btn btn-primary" role="button">View</a></p>
+      </div>
+    </div>
+  </div>
+<hr/>
+</div>
+{% endfor %}
+
+
+
+
+</div>
+
+{% endblock content %}
